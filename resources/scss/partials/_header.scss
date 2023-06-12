@@ -1,0 +1,48 @@
+header {
+    .container {
+        display : flex;
+        align-items: center;
+
+        height: 120px;
+
+        .logo {
+            height: 100%;
+            padding: 20px 0;
+
+            img {
+                max-height: 100%;
+            }
+        }
+
+        nav {
+            height: 100%;
+
+            ul {
+                display: flex;
+                height: 100%;
+
+                li {
+                    list-style: none;
+                    padding: 0 18px;
+
+                    a {
+                        text-decoration: none;
+                        display: flex;
+                        align-items: center;
+                        height: 100%;
+                        text-transform: uppercase;
+                        color: rgb(86, 86, 86);
+                        padding: 20px 0px;
+                        border-bottom: 5px solid transparent;
+
+                        &:hover,
+                        &.active {
+                            color: #0C7CEC;;
+                            border-bottom: 5px solid #0C7CEC;;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
