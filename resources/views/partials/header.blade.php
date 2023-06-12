@@ -11,7 +11,7 @@
             <a href="{{ route('home') }}" class="fs-sm fw-medium {{ Route::currentRouteName() === 'home' ? "active" : ""}}">Home</a>
           </li>
           <li>
-            <a href="#" class="fs-sm fw-medium">Comics</a>
+            <a href="{{ route('comics.index') }}" class="fs-sm fw-medium {{ Route::currentRouteName() === 'comics.index' ? "active" : ""}}">Comics</a>
           </li>
         </ul>
       </nav>
