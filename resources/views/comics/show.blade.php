@@ -15,7 +15,7 @@
         </div>
 
         <div class="col-9">
-          <table class="table table-dark">
+          <table class="table table-dark mb-4">
             <tbody>
               <tr>
                 <td class="fw-bold w-25">Series :</td>
@@ -47,6 +47,15 @@
               </tr>
             </tbody>
           </table>
+
+          <div class="d-flex justify-content-between">
+            <a href="{{ route('comics.index')}}" title="Go back" class="btn btn-primary text-white"><i class="fa-solid fa-left-long"></i></a>
+
+            <div>
+              <a href="{{ route('comics.show', $comic)}}" title="Edit" class="btn btn-warning text-white"><i class="fa-solid fa-pencil"></i></a>
+            </div>
+          </div>
+
         </div>
 
       </div>

@@ -8,12 +8,9 @@
   <div class="home bg-dark">
     <div class="container py-5">
 
-      <div class="row">
-        <div class="col">
-          <h1 class="text-white mb-4">Comics</h1>
-        </div>
-
-        <div class="col-auto">
+      <div class="row mb-3">
+        <div class="col d-flex align-items-center">
+          <h1 class="text-white me-4">Comics</h1>
           <form action="{{ route("comics.index") }}">
             <div class="d-flex">
               <button type="submit" class="btn btn-primary d-inline-block me-3 text-nowrap">Order by :</button>
@@ -28,6 +25,10 @@
               </select>
             </div>
           </form>
+        </div>
+
+        <div class="col-auto">
+          <a href="{{ route('comics.create')}}" title="Add new Comic" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
         </div>
       </div>
 
