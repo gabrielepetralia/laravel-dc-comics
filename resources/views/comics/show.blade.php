@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('title')
-  Comics | {{ $comic->title }}
+  {{ $comic->title }}
 @endsection
 
 @section('content')
@@ -52,7 +52,7 @@
             <a href="{{ route('comics.index')}}" title="Go back" class="btn btn-primary text-white"><i class="fa-solid fa-left-long"></i></a>
 
             <div>
-              <a href="{{ route('comics.show', $comic)}}" title="Edit" class="btn btn-warning text-white"><i class="fa-solid fa-pencil"></i></a>
+              <a href="{{ route('comics.edit', $comic) }}" title="Edit" class="btn btn-warning text-white"><i class="fa-solid fa-pencil"></i></a>
             </div>
           </div>
 
