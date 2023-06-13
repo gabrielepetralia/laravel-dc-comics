@@ -12,9 +12,11 @@ class ComicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-      $comics = Comic::orderBy('id', 'desc')->paginate(5);
+      $sort = $request->get('sort') ?? 'id';
+
+      $comics = Comic::orderBy($sort, 'desc')->paginate(5);
 
       return view('comics.index', compact('comics'));
     }

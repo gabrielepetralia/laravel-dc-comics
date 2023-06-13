@@ -7,7 +7,29 @@
 @section('content')
   <div class="home bg-dark">
     <div class="container py-5">
-      <h1 class="text-white mb-4">Comics</h1>
+
+      <div class="row">
+        <div class="col">
+          <h1 class="text-white mb-4">Comics</h1>
+        </div>
+
+        <div class="col-auto">
+          <form action="{{ route("comics.index") }}">
+            <div class="d-flex">
+              <button type="submit" class="btn btn-primary d-inline-block me-3 text-nowrap">Order by :</button>
+
+              <select class="form-select d-inline-block" name="sort" aria-label="Default select example">
+                <option value="id" selected>ID</option>
+                <option value="title">Title</option>
+                <option value="series">Series</option>
+                <option value="type">Type</option>
+                <option value="sale_date">Sale Date</option>
+                <option value="price">Price</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
 
       <table class="table table-dark mb-4">
         <thead>
@@ -32,7 +54,8 @@
             <td>{{ $comic->sale_date }}</td>
             <td>{{ $comic->price }}</td>
             <td>
-              <a href="{{ route('comics.show', $comic)}}" class="btn btn-primary">Show</a>
+              <a href="{{ route('comics.show', $comic)}}" title="Show" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
+              <a href="{{ route('comics.show', $comic)}}" title="Edit" class="btn btn-warning text-white"><i class="fa-solid fa-pencil"></i></a>
             </td>
           </tr>
           @endforeach
