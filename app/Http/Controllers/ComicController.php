@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use App\Http\Requests\ComicRequest;
 
 class ComicController extends Controller
 {
@@ -37,9 +38,23 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ComicRequest $request)
     {
-        //
+      $form_data = $request->all();
+
+      $new_comic = new Comic();
+
+      $form_data['slug'] = Comic::generateSlug($form_data['title']);
+
+      // if(@getimagesize($form_data['thumb'])) {
+      //   $form_data['thumb'] = 'https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png';
+      // }
+
+      $new_comic->fill($form_data);
+
+      $new_comic->save();
+
+      return redirect()->route('comics.show', $new_comic);
     }
 
     /**

@@ -56,7 +56,7 @@
             <td>{{ $comic->price }}</td>
             <td>
               <a href="{{ route('comics.show', $comic)}}" title="Show" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
-              <a href="{{ route('comics.show', $comic)}}" title="Edit" class="btn btn-warning text-white"><i class="fa-solid fa-pencil"></i></a>
+              <a href="#" title="Edit" class="btn btn-warning text-white"><i class="fa-solid fa-pencil"></i></a>
             </td>
           </tr>
           @endforeach

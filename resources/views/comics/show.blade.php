@@ -11,7 +11,7 @@
 
       <div class="row">
         <div class="col-3">
-          <img class="img-fluid" src="{{ $comic->thumb }}" alt="Poster {{ $comic->title }}">
+          <img class="img-fluid" src="{{ $comic->thumb }}" onerror="this.src = 'https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png'" alt="Poster {{ $comic->title }}">
         </div>
 
         <div class="col-9">
