@@ -53,6 +53,7 @@
 
             <div>
               <a href="{{ route('comics.edit', $comic) }}" title="Edit" class="btn btn-warning text-white"><i class="fa-solid fa-pencil"></i></a>
+              @include('partials.comic_delete')
             </div>
           </div>
 

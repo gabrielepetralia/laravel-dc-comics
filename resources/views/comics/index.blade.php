@@ -32,6 +32,12 @@
         </div>
       </div>
 
+      @if (session('deleted'))
+        <div class="alert alert-success" role="alert">
+            {{ session('deleted') }}
+        </div>
+      @endif
+
       <table class="table table-dark mb-4">
         <thead>
           <tr>
@@ -57,6 +63,7 @@
             <td>
               <a href="{{ route('comics.show', $comic) }}" title="Show" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
               <a href="{{ route('comics.edit', $comic) }}" title="Edit" class="btn btn-warning text-white"><i class="fa-solid fa-pencil"></i></a>
+              @include('partials.comic_delete')
             </td>
           </tr>
           @endforeach
